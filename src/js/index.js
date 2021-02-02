@@ -22,6 +22,17 @@ import "../style/index.scss";
         city: null
     }
  */
+
+function getVariables(variable) {
+  switch (key) {
+    case value:
+      break;
+
+    default:
+      break;
+  }
+}
+
 function render(variables = {}) {
   console.log("These are the current variables: ", variables); //print on the console
   // here we ask the logical questions to make decisions on how to build the html
@@ -33,14 +44,24 @@ function render(variables = {}) {
   document.querySelector("#widget_content").innerHTML = `<div class="widget">
             ${cover}
           <img src="${variables.avatarURL}" class="photo" />
-          <h1>${variables.name} ${variables.lastname}</h1>
-          <h2>${variables.role}</h2>
-          <h3>${variables.city}, ${variables.country}</h3>
+          <h1>${variables.name == null ? "Name" : variables.name}
+           ${variables.lastname == null ? "Last Name" : variables.lastname}</h1>
+          <h2>${variables.role == null ? "Role" : variables.role}</h2>
+          <h3>${variables.city == null ? "City" : variables.city}, 
+          ${variables.country == null ? "Country" : variables.country}</h3>
           <ul class="${variables.socialMediaPosition}">
-            <li><a href="${variables.twitter}"><i class="fa fa-twitter"></i></a></li>
-            <li><a href="${variables.github}"><i class="fa fa-github"></i></a></li>
-            <li><a href="${variables.linkedin}"><i class="fa fa-linkedin"></i></a></li>
-            <li><a href="${variables.instagram}"><i class="fa fa-instagram"></i></a></li>
+            <li><a href="${
+              variables.twitter
+            }"><i class="fa fa-twitter"></i></a></li>
+            <li><a href="${
+              variables.github
+            }"><i class="fa fa-github"></i></a></li>
+            <li><a href="${
+              variables.linkedin
+            }"><i class="fa fa-linkedin"></i></a></li>
+            <li><a href="${
+              variables.instagram
+            }"><i class="fa fa-instagram"></i></a></li>
           </ul>
         </div>
     `;
